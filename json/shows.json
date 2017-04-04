@@ -1,0 +1,95 @@
+{
+	"shows" : 
+	[
+		{ 
+			"show" : "Bloodline",
+			"lastDiffusion" : "2016-05-25",
+			"nextDiffusion" : "2017-05-30",
+			"hashtags" : 
+				[
+					"#bloodline"
+				] 
+		},
+		{ 
+			"show" : "Unbreakable Kimmy Schmidt",
+			"lastDiffusion" : "2016-04-15", 
+			"nextDiffusion" : "2017-05-19",
+			"hashtags" : 
+				[
+					"#unbreakablekimmyschmidt"
+				] 
+		},
+		{ 
+			"show" : "Bojack Horseman",
+			"lastDiffusion" : "2016-07-22", 
+			"nextDiffusion" : "2017-07-20",
+			"hashtags" : 
+				[
+					"#bojackhorseman"
+				] 
+		},
+		{ 
+			"show" : "Daredevil",
+			"lastDiffusion" : "2016-03-18", 
+			"nextDiffusion" : "2018-03-30",
+			"hashtags" : 
+				[
+					"#daredevil"
+				] 
+		},
+		{ 
+			"show" : "Sense8",
+			"lastDiffusion" : "2015-06-05", 
+			"nextDiffusion" : "2017-05-05",
+			"hashtags" : 
+				[
+					"#sense8"
+				] 
+		},
+		{ 
+			"show" : "Master Of None",
+			"lastDiffusion" : "2015-11-06", 
+			"nextDiffusion" : "2017-05-12",
+			"hashtags" : 
+				[
+					"#MasterOfNone"
+				] 
+		},
+		{ 
+			"show" : "Stranger Things",
+			"lastDiffusion" : "2016-07-15", 
+			"nextDiffusion" : "2017-10-30",
+			"hashtags" : 
+				[
+					"#strangerthings"
+				] 
+		},
+		{ 
+			"show" : "Orange Is The New Black",
+			"lastDiffusion" : "2017-06-17", 
+			"nextDiffusion" : "2017-06-09",
+			"hashtags" : 
+				[
+					"#orangeisthenewblack", "#oitnb"
+				] 
+		},
+		{ 
+			"show" : "Narcos",
+			"lastDiffusion" : "2016-09-02", 
+			"nextDiffusion" : "2017-09-01",
+			"hashtags" : 
+				[
+					"#narcos"
+				]  
+		},
+		{ 
+			"show" : "House Of Cards",
+			"lastDiffusion" : "2016-03-04", 
+			"nextDiffusion" : "2017-05-30",
+			"hashtags" : 
+				[
+					"#houseofcards", "#hoc"
+				] 
+	}
+		]
+	}
