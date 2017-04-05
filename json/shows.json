@@ -7,7 +7,7 @@
 			"nextDiffusion" : "2017-05-30",
 			"hashtags" : 
 				[
-					"#bloodline"
+					"bloodline"
 				] 
 		},
 		{ 
@@ -16,7 +16,7 @@
 			"nextDiffusion" : "2017-05-19",
 			"hashtags" : 
 				[
-					"#unbreakablekimmyschmidt"
+					"unbreakablekimmyschmidt"
 				] 
 		},
 		{ 
@@ -25,7 +25,7 @@
 			"nextDiffusion" : "2017-07-20",
 			"hashtags" : 
 				[
-					"#bojackhorseman"
+					"bojackhorseman"
 				] 
 		},
 		{ 
@@ -34,7 +34,7 @@
 			"nextDiffusion" : "2018-03-30",
 			"hashtags" : 
 				[
-					"#daredevil"
+					"daredevil"
 				] 
 		},
 		{ 
@@ -43,7 +43,7 @@
 			"nextDiffusion" : "2017-05-05",
 			"hashtags" : 
 				[
-					"#sense8"
+					"sense8"
 				] 
 		},
 		{ 
@@ -52,7 +52,7 @@
 			"nextDiffusion" : "2017-05-12",
 			"hashtags" : 
 				[
-					"#MasterOfNone"
+					"MasterOfNone"
 				] 
 		},
 		{ 
@@ -61,7 +61,7 @@
 			"nextDiffusion" : "2017-10-30",
 			"hashtags" : 
 				[
-					"#strangerthings"
+					"strangerthings"
 				] 
 		},
 		{ 
@@ -70,7 +70,7 @@
 			"nextDiffusion" : "2017-06-09",
 			"hashtags" : 
 				[
-					"#orangeisthenewblack", "#oitnb"
+					"oitnb"
 				] 
 		},
 		{ 
@@ -79,7 +79,7 @@
 			"nextDiffusion" : "2017-09-01",
 			"hashtags" : 
 				[
-					"#narcos"
+					"narcos"
 				]  
 		},
 		{ 
@@ -88,8 +88,8 @@
 			"nextDiffusion" : "2017-05-30",
 			"hashtags" : 
 				[
-					"#houseofcards", "#hoc"
+					"houseofcards"
 				] 
-	}
-		]
-	}
+	   }
+    ]
+}

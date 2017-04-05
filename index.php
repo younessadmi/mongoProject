@@ -28,14 +28,20 @@
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    
+               <!-- Graph -->
+                <div class="col-xs-12 col-md-6">
+                    <div id="number-of-occurence-by-show" class="graph">
+                        <p class="graph-title">Number of occurence by show</p>
+                        <button class="btn btn-default">Load the graph</button>
+                    </div>
                 </div>
             </div>
         </div>
         <script src="js/jquery/jquery-3.2.0.min.js"></script>
         <script src="js/bootstrap/bootstrap.min.js"></script>
         <script src="js/nprogress/nprogress.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

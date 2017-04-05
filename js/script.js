@@ -3,7 +3,7 @@ $(function(){
     $('.fill-the-database').click(function(){
         var $this = $(this);
         $this.attr('disabled', true);
-        NProgress.start() 
+        NProgress.start();
         $.ajax({
             url: 'script/fill-the-database.php',
             method: 'POST',
@@ -18,13 +18,35 @@ $(function(){
             NProgress.done() 
         });
     });
-    //Create graphs
-    getAllGraphs();
+    //Number of occurence by show
+    $('#number-of-occurence-by-show button').click(function(){
+        var $this = $(this);
+        $this.attr('disabled', true);
+        NProgress.start();
+        
+        $.getJSON('json/shows.json').then(function(shows){
+            $this.attr('disabled', false);
+            console.log(shows);
+            buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
+        });
+    });
 });
 
-function getAllGraphs(){
-    //Get the list of shows
-    $.getJSON('json/shows.json', function(shows){
-        console.log(shows);
+function buildChart(container, graph_type){
+    var graph_types = {
+        'number-of-occurence-by-show': 'script/number-of-occurence-by-show.php'
+    };
+
+    $.ajax({
+        url: graph_types[graph_type],
+        method: 'POST',
+        data: {},
+        dataType: 'JSON'
+    }).done(function(options, textStatus, jqXHR){
+        Highcharts.chart(container, options);
+    }).fail(function(jqXHR, textStatus, errorThrown){
+        console.error(jqXHR);
+    }).always(function(){
+        NProgress.done() 
     });
 }

@@ -4,3 +4,4 @@
 <title>Mongo DB project</title>
 <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="css/nprogress/nprogress.css">
+<link rel="stylesheet" href="css/style.css">

@@ -1,0 +1,10 @@
+.graph{
+    border: dashed 1px black;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+.graph .graph-title{
+    font-style: italic;   
+}
