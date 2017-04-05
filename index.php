@@ -33,8 +33,9 @@
                 </div>
             </div>
         </div>
-        <script src="js/jquery-3.2.0.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery/jquery-3.2.0.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/nprogress/nprogress.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
