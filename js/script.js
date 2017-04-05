@@ -22,6 +22,10 @@ $(function(){
     $.getJSON('json/shows.json').then(function(shows){
         buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
     });
+    //Enable tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+        container: 'body'
+    });
 });
 
 function buildChart(container, graph_type){
