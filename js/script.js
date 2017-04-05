@@ -22,11 +22,9 @@ $(function(){
     $('#number-of-occurence-by-show button').click(function(){
         var $this = $(this);
         $this.attr('disabled', true);
-        NProgress.start();
-        
+        $this.html('<i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>');
         $.getJSON('json/shows.json').then(function(shows){
             $this.attr('disabled', false);
-            console.log(shows);
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
         });
     });

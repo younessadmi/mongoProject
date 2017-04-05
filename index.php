@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row">
                <!-- Graph -->
-                <div class="col-xs-12 col-md-6">
+                <div class="col-sm-12 col-md-6">
                     <div id="number-of-occurence-by-show" class="graph">
                         <p class="graph-title">Number of occurence by show</p>
                         <button class="btn btn-default">Load the graph</button>
