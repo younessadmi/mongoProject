@@ -10,7 +10,7 @@ $(function(){
             data: {},
             dataType: 'JSON'
         }).done(function(data, textStatus, jqXHR){
-            console.log(data);
+            buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){
@@ -19,14 +19,8 @@ $(function(){
         });
     });
     //Number of occurence by show
-    $('#number-of-occurence-by-show button').click(function(){
-        var $this = $(this);
-        $this.attr('disabled', true);
-        $this.html('<i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>');
-        $.getJSON('json/shows.json').then(function(shows){
-            $this.attr('disabled', false);
-            buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
-        });
+    $.getJSON('json/shows.json').then(function(shows){
+        buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
     });
 });
 

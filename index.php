@@ -32,7 +32,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div id="number-of-occurence-by-show" class="graph">
                         <p class="graph-title">Number of occurence by show</p>
-                        <button class="btn btn-default">Load the graph</button>
+                        <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                     </div>
                 </div>
             </div>
