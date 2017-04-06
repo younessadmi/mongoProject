@@ -30,21 +30,34 @@ $(function(){
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body'
     });
+    //Tweets per hour by show
+    $('select.tweet-per-hour-by-show').change(function(){
+        var hashtag = $(this).val();
+        buildChart('tweet-per-hour-by-show', 'tweet-per-hour-by-show', hashtag, true);
+    });
 });
 
-function buildChart(container, graph_type){
+function buildChart(container, graph_type, hashtag, highstock){
+    var hashtag = (hashtag == undefined)? null:hashtag;
+    var highstock = (highstock == undefined)? false:true;
+    
     var graph_types = {
         'number-of-occurence-by-show': 'script/number-of-occurence-by-show.php',
-        'tweets-by-language': 'script/tweets-by-language.php'
+        'tweets-by-language': 'script/tweets-by-language.php',
+        'tweet-per-hour-by-show': 'script/tweet-per-hour-by-show.php'
     };
 
     $.ajax({
         url: graph_types[graph_type],
         method: 'POST',
-        data: {},
+        data: { hashtag: hashtag},
         dataType: 'JSON'
     }).done(function(options, textStatus, jqXHR){
-        Highcharts.chart(container, options);
+        if(highstock == false){
+            Highcharts.chart(container, options);
+        }else{
+            Highcharts.stockChart(container, options);
+        }
     }).fail(function(jqXHR, textStatus, errorThrown){
         console.error(jqXHR);
     }).always(function(){

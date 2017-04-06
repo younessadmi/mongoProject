@@ -45,16 +45,34 @@
             <div class="row">
                <!-- Graph -->
                 <div class="col-sm-12 col-md-6">
-                    <div id="number-of-occurence-by-show" class="graph">
-                        <p class="graph-title">Number of occurence by show</p>
-                        <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                    <div class="graph">
+                        <div id="number-of-occurence-by-show">
+                            <p class="graph-title">Number of occurence by show</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Graph -->
                  <div class="col-sm-12 col-md-6">
-                     <div id="tweets-by-language" class="graph">
-                         <p class="graph-title">Tweets by language</p>
-                         <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                    <div class="graph">
+                        <div id="tweets-by-language">
+                            <p class="graph-title">Tweets by language</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                        </div>
+                     </div>
+                 </div>
+                <!-- Graph -->
+                 <div class="col-sm-12 col-md-6">
+                    <div class="graph">
+                       <select class="tweet-per-hour-by-show">
+                          <option disabled selected>Select a show</option>
+                           <?php foreach(getListOfShows() as $hashtag){?>
+                               <option><?php echo $hashtag;?></option>
+                           <?php }?>
+                       </select>
+                        <div id="tweet-per-hour-by-show">
+                            <p class="graph-title">Tweets per hour</p>
+                        </div>
                      </div>
                  </div>
             </div>
@@ -62,8 +80,10 @@
         <script src="js/jquery/jquery-3.2.0.min.js"></script>
         <script src="js/bootstrap/bootstrap.min.js"></script>
         <script src="js/nprogress/nprogress.js"></script>
-        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+        
         <script src="js/script.js"></script>
     </body>
 </html>

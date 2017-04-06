@@ -47,7 +47,7 @@ try{
 }
 
 // GET NUMBER OF TWEETS FROM DB
-include('number-of-tweets.php');
+include('functions.php');
 $nbTweets = getNumberOfTweets();
 
 echo json_encode($nbTweets);

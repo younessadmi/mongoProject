@@ -7,4 +7,4 @@ if(!extension_loaded('mongodb')){
     die('Mongo php extension is not loaded');
 }
 require('config/config.php');
-require('script/number-of-tweets.php'); 
+require('script/functions.php');
