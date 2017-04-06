@@ -1,7 +1,5 @@
 <?php
 require('../config/config.php');
-require('../vendor/twitteroauth-master/autoload.php');
-use Abraham\TwitterOAuth\TwitterOAuth;
 
 // GET SHOWS TO TRACK
 $showsJson = json_decode(file_get_contents('../json/shows.json'), true);

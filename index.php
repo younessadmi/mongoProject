@@ -36,6 +36,12 @@
             </div>
         </nav>
         <div class="container">
+           <div class="row">
+               <div class="col-sm-12" style="text-align:right">
+                   <p class="label label-default" id="number-of-tweets"><?php include('script/number-of-tweets.php'); echo getNumberOfTweets();?></p>
+                   <br><br><br>
+               </div>
+           </div>
             <div class="row">
                <!-- Graph -->
                 <div class="col-sm-12 col-md-6">

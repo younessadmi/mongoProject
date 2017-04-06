@@ -9,8 +9,9 @@ $(function(){
             method: 'POST',
             data: {},
             dataType: 'JSON'
-        }).done(function(data, textStatus, jqXHR){
+        }).done(function(nbTweets, textStatus, jqXHR){
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
+            $('p#number-of-tweets').html(nbTweets);
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){

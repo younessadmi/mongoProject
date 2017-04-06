@@ -22,7 +22,7 @@ foreach($showsJson as $show){
     }
 }
 
-// GET TWEETS
+// GET TWEETS FROM TWEETER
 $tweetOptions = [
     'q' => $searchQuery,
     'count' => 100
@@ -39,4 +39,8 @@ foreach($tweets->statuses as $tweet){
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
 $result = $mongo->executeBulkWrite(DB_NAME.'.tweets', $insRec, $writeConcern);
 
-echo json_encode($result);
+// GET NUMBER OF TWEETS FROM DB
+include('number-of-tweets.php');
+$nbTweets = getNumberOfTweets();
+
+echo json_encode($nbTweets);
