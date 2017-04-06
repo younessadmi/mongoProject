@@ -23,21 +23,24 @@ foreach($showsJson as $show){
 }
 
 // GET TWEETS FROM TWEETER
-$tweetOptions = [
-    'q' => $searchQuery,
-    'count' => 100
-];
-$tweets = $connection->get('search/tweets', $tweetOptions);
-$mongo = new MongoDB\Driver\Manager(DB_CONNECTION);
 $insRec = new MongoDB\Driver\BulkWrite(['ordered' => false]);
-
-foreach($tweets->statuses as $tweet){
-    $tweet->_id = $tweet->id_str;
-    $insRec->insert($tweet);
+for($i=8; $i>=0; $i--){
+    $date = new DateTime($i.' days ago');
+    $tweetOptions = [
+        'q' => $searchQuery,
+        'count' => 100,
+        'until' => $date->format('Y-m-d')
+    ];
+    $tweets = $connection->get('search/tweets', $tweetOptions);
+    foreach($tweets->statuses as $tweet){
+        $tweet->_id = $tweet->id_str;
+        $insRec->insert($tweet);
+    }
 }
 
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
 try{
+    $mongo = new MongoDB\Driver\Manager(DB_CONNECTION);
     $mongo->executeBulkWrite(DB_NAME.'.tweets', $insRec, $writeConcern);
 }catch(Exception $e){
        
