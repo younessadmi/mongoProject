@@ -30,8 +30,18 @@ $options = [
     'title' => [
         'text' => 'Tweets by language'
     ],
+    'plotOptions' => [
+        'pie' => [
+            'allowPointSelect' => true,
+            'cursor' => 'pointer',
+            'dataLabels' => [
+                'enabled' => false
+            ],
+            'showInLegend' => true
+        ]
+    ],
     'series' => [[
-        'name' => 'Languages',
+        'name' => 'Number of tweets',
         'data' => $data
     ]]
 ];
