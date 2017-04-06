@@ -13,16 +13,18 @@ $(function(){
             $('#number-of-tweets').html(nbTweets);
                 
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
+            buildChart('tweets-by-language', 'tweets-by-language');
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){
             $this.attr('disabled', false);
-            NProgress.done() 
+            NProgress.done()
         });
     });
     //Number of occurence by show
     $.getJSON('json/shows.json').then(function(shows){
         buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
+        buildChart('tweets-by-language', 'tweets-by-language');
     });
     //Enable tooltips
     $('[data-toggle="tooltip"]').tooltip({
@@ -32,7 +34,8 @@ $(function(){
 
 function buildChart(container, graph_type){
     var graph_types = {
-        'number-of-occurence-by-show': 'script/number-of-occurence-by-show.php'
+        'number-of-occurence-by-show': 'script/number-of-occurence-by-show.php',
+        'tweets-by-language': 'script/tweets-by-language.php'
     };
 
     $.ajax({
@@ -45,6 +48,6 @@ function buildChart(container, graph_type){
     }).fail(function(jqXHR, textStatus, errorThrown){
         console.error(jqXHR);
     }).always(function(){
-        NProgress.done() 
+        NProgress.done()
     });
 }

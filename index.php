@@ -50,6 +50,13 @@
                         <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                     </div>
                 </div>
+                <!-- Graph -->
+                 <div class="col-sm-12 col-md-6">
+                     <div id="tweets-by-language" class="graph">
+                         <p class="graph-title">Tweets by language</p>
+                         <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                     </div>
+                 </div>
             </div>
         </div>
         <script src="js/jquery/jquery-3.2.0.min.js"></script>
