@@ -17,11 +17,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">ESGI</a>
+                    <a class="navbar-brand">ESGI</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="btn btn-link fill-the-database">Fill the database</a></li>
+                        <li>
+                            <a href="https://github.com/younessadmi/mongoProject" class="btn btn-link">
+                                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-link fill-the-database" data-toggle="tooltip" data-placement="bottom" title="Update DB">
+                                <i class="fa fa-database fa-2x" aria-hidden="true"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -29,10 +38,10 @@
         <div class="container">
             <div class="row">
                <!-- Graph -->
-                <div class="col-xs-12 col-md-6">
+                <div class="col-sm-12 col-md-6">
                     <div id="number-of-occurence-by-show" class="graph">
                         <p class="graph-title">Number of occurence by show</p>
-                        <button class="btn btn-default">Load the graph</button>
+                        <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                     </div>
                 </div>
             </div>

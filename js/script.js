@@ -10,7 +10,7 @@ $(function(){
             data: {},
             dataType: 'JSON'
         }).done(function(data, textStatus, jqXHR){
-            console.log(data);
+            buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){
@@ -19,16 +19,12 @@ $(function(){
         });
     });
     //Number of occurence by show
-    $('#number-of-occurence-by-show button').click(function(){
-        var $this = $(this);
-        $this.attr('disabled', true);
-        NProgress.start();
-        
-        $.getJSON('json/shows.json').then(function(shows){
-            $this.attr('disabled', false);
-            console.log(shows);
-            buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
-        });
+    $.getJSON('json/shows.json').then(function(shows){
+        buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
+    });
+    //Enable tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+        container: 'body'
     });
 });
 
