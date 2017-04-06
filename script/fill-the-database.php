@@ -7,9 +7,24 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
 $content = $connection->get('account/verify_credentials');
 
+$showsJson = json_decode(file_get_contents('../json/shows.json'), true);
+$searchQuery = '';
+
+$i = 0;
+foreach($showsJson as $show){
+    foreach($show as $s){
+        foreach($s['hashtags'] as $hashtag){
+            $searchQuery = $searchQuery.'#'.$hashtag;
+            if(++$i !== count($show)){
+                $searchQuery = $searchQuery.'+OR+';
+            }
+        }
+    }
+}
+
 // GET TWEETS
 $tweetOptions = [
-    'q' => '#oitnb+OR+#houseofcards',
+    'q' => $searchQuery,
     'count' => 100
 ];
 $tweets = $connection->get('search/tweets', $tweetOptions);
