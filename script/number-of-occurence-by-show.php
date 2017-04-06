@@ -17,9 +17,9 @@ foreach($showsJson as $show){
 }
 //GET ALL TWEETS
 $filter = [];
-$mongo = new MongoDB\Driver\Manager('mongodb://localhost:27017');
+$mongo = new MongoDB\Driver\Manager(DB_CONNECTION);
 $query = new MongoDB\Driver\Query($filter);
-$rows = $mongo->executeQuery('mongo-project.tweets', $query);
+$rows = $mongo->executeQuery(DB_NAME.'.tweets', $query);
 foreach($rows as $row){
     foreach($row->entities->hashtags as $hashtag){
         if(isset($showOccurence[strtolower($hashtag->text)])){
