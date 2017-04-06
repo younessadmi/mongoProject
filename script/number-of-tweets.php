@@ -12,5 +12,5 @@ function getNumberOfTweets(){
         $nbTweets++;
     }
 
-    return $nbTweets.' tweets';
+    return $nbTweets.' <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>';
 }

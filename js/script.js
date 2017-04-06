@@ -10,8 +10,9 @@ $(function(){
             data: {},
             dataType: 'JSON'
         }).done(function(nbTweets, textStatus, jqXHR){
+            $('#number-of-tweets').html(nbTweets);
+                
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
-            $('p#number-of-tweets').html(nbTweets);
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){

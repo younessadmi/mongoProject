@@ -37,7 +37,11 @@ foreach($tweets->statuses as $tweet){
 }
 
 $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
-$result = $mongo->executeBulkWrite(DB_NAME.'.tweets', $insRec, $writeConcern);
+try{
+    $mongo->executeBulkWrite(DB_NAME.'.tweets', $insRec, $writeConcern);
+}catch(Exception $e){
+       
+}
 
 // GET NUMBER OF TWEETS FROM DB
 include('number-of-tweets.php');
