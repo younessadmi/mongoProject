@@ -5,7 +5,7 @@ require('../config/config.php');
 $showsJson = json_decode(file_get_contents('../json/shows.json'), true);
 $showOccurence = [];
 foreach($showsJson as $show){
-    foreach($show as $s){
+    foreach($show as $s){ 
         foreach($s['hashtags'] as $hashtag){
             if(!isset($showOccurence[$hashtag])){
                 $showOccurence[strtolower($hashtag)] = 0;
