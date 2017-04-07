@@ -23,6 +23,7 @@ $(function(){
             NProgress.done()
         });
     });
+
     //Number of occurence by show
     $.getJSON('json/shows.json').then(function(shows){
         buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
