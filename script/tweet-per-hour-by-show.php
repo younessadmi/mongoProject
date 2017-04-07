@@ -15,17 +15,17 @@ $rows = $mongo->executeQuery(DB_NAME.'.tweets', $query);
 $data = [];
 foreach($rows as $row){
     $date = DateTime::createFromFormat('D M d H:i:s O Y', $row->created_at); // Thu Apr 06 19:11:39 +0000 2017
-    if(!isset($data[$date->format('H')])){
-        $data[intval($date->format('H'))] = 0;
+    if(!isset($data[$date->format('H').':00'])){
+        $data[$date->format('H').':00'] = 0;
     }
-    $data[intval($date->format('H'))]++;
+    $data[$date->format('H').':00']++;
 }
 foreach(range(0, 23) as $hour){
-    if(!isset($data[$hour])){
-        $data[$hour] = 0;
+    if(!isset($data[$hour.':00'])){
+        $data[$hour.':00'] = 0;
     }
 }
-ksort($data);
+ksort($data, SORT_NUMERIC);
 
 //DEFINE THE CHART OPTIONS
 $options = [
