@@ -43,6 +43,20 @@
                </div>
            </div>
             <div class="row">
+                <!-- Graph -->
+                 <div class="col-sm-12 col-md-6">
+                    <div class="graph">
+                       <select class="tweet-per-hour-by-show">
+                          <option selected>All</option>
+                           <?php foreach(getListOfShows() as $hashtag){?>
+                               <option><?php echo $hashtag;?></option>
+                           <?php }?>
+                       </select>
+                        <div id="tweet-per-hour-by-show">
+                            <p class="graph-title">Tweets per hour</p>
+                        </div>
+                     </div>
+                 </div>
                <!-- Graph -->
                 <div class="col-sm-12 col-md-6">
                     <div class="graph">
@@ -58,20 +72,6 @@
                         <div id="tweets-by-language">
                             <p class="graph-title">Tweets by language</p>
                             <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
-                        </div>
-                     </div>
-                 </div>
-                <!-- Graph -->
-                 <div class="col-sm-12 col-md-6">
-                    <div class="graph">
-                       <select class="tweet-per-hour-by-show">
-                          <option disabled selected>Select a show</option>
-                           <?php foreach(getListOfShows() as $hashtag){?>
-                               <option><?php echo $hashtag;?></option>
-                           <?php }?>
-                       </select>
-                        <div id="tweet-per-hour-by-show">
-                            <p class="graph-title">Tweets per hour</p>
                         </div>
                      </div>
                  </div>

@@ -14,6 +14,7 @@ $(function(){
                 
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
             buildChart('tweets-by-language', 'tweets-by-language');
+            buildChart('tweet-per-hour-by-show', 'tweet-per-hour-by-show', hashtag, true);
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){
@@ -25,6 +26,7 @@ $(function(){
     $.getJSON('json/shows.json').then(function(shows){
         buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
         buildChart('tweets-by-language', 'tweets-by-language');
+        buildChart('tweet-per-hour-by-show', 'tweet-per-hour-by-show', $('select.tweet-per-hour-by-show').val(), true);
     });
     //Enable tooltips
     $('[data-toggle="tooltip"]').tooltip({

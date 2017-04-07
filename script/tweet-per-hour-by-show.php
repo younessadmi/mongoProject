@@ -2,9 +2,13 @@
 require('../config/config.php');
 
 //GET TWEET TAGGED WITH THE HASHTAG POSTED
-$filter = [
-    'entities.hashtags.text' => $_POST['hashtag']
-];
+if($_POST['hashtag'] != 'All'){
+    $filter = [
+        'entities.hashtags.text' => $_POST['hashtag']
+    ];
+}else{
+    $filter = [];   
+}
 $mongo = new MongoDB\Driver\Manager(DB_CONNECTION);
 $query = new MongoDB\Driver\Query($filter);
 $rows = $mongo->executeQuery(DB_NAME.'.tweets', $query);
