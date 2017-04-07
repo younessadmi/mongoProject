@@ -62,7 +62,7 @@ include('pre-requisite.php');
             </div>
             <div class="row">
                 <!-- Graph -->
-                 <div class="col-sm-12 col-md-6">
+                 <div class="col-sm-12 col-md-12">
                     <div class="graph">
                        <select class="tweet-per-hour-by-show">
                           <option selected>All</option>
@@ -75,8 +75,10 @@ include('pre-requisite.php');
                         </div>
                      </div>
                  </div>
+             </div>
+             <div class="row">
                 <!-- Graph -->
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-12">
                     <div class="graph">
                         <div id="number-of-occurence-by-show">
                             <p class="graph-title">Number of occurence by show</p>
@@ -84,8 +86,10 @@ include('pre-requisite.php');
                         </div>
                     </div>
                 </div>
-                <!-- Graph -->
-                <div class="col-sm-12 col-md-6">
+            </div>
+            <!-- Graph -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
                     <div class="graph">
                         <div id="tweets-by-language">
                             <p class="graph-title">Tweets by language</p>
@@ -93,7 +97,7 @@ include('pre-requisite.php');
                         </div>
                      </div>
                  </div>
-            </div>
+             </div>
             <script src="js/jquery/jquery-3.2.0.min.js"></script>
             <script src="js/bootstrap/bootstrap.min.js"></script>
             <script src="js/nprogress/nprogress.js"></script>
