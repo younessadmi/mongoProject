@@ -55,9 +55,9 @@ include('pre-requisite.php');
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12" style="text-align:right">
-                    <p class="label label-default" id="number-of-tweets"><?php echo getNumberOfTweets();?></p>
-                    <br><br><br>
+                <div class="col-sm-12" style="text-align:center">
+                    <h1><span class="label label-default" id="number-of-tweets"><?php echo getNumberOfTweets();?></span></h1>
+                    <br>
                 </div>
             </div>
             <div class="row">

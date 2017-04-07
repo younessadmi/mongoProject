@@ -19,7 +19,7 @@ function getListOfShows(){
     $showsJson = json_decode(file_get_contents('json/shows.json'), true);
     $shows = [];
     foreach($showsJson as $show){
-        foreach($show as $s){ 
+        foreach($show as $s){
             foreach($s['hashtags'] as $hashtag){
                 if(!in_array($hashtag, $shows)){
                     $shows[] = strtolower($hashtag);
