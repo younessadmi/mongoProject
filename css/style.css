@@ -8,3 +8,8 @@
 }
 .graph .graph-title{
 }
+
+body {
+    position: relative; 
+    margin-top:75px;
+}

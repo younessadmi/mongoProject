@@ -2,16 +2,16 @@
 include('pre-requisite.php');
 ?>
 
-<DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
-    <head>
-        <?php include('head.php'); ?>
-    </head>
-    <body>
-        <nav class="navbar navbar-default">
+        <head>
+            <?php include('head.php'); ?>
+        </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="75">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -19,23 +19,31 @@ include('pre-requisite.php');
                     </button>
                     <a class="navbar-brand">ESGI</a>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="https://github.com/younessadmi/mongoProject" class="btn btn-link">
-                                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="btn btn-link fill-the-database" data-toggle="tooltip" data-placement="bottom" title="Update DB">
-                                <i class="fa fa-database fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                       <ul class="nav navbar-nav">
+                            <li><a href="#tweet-per-hour-by-show">Tweet per hour</a></li>
+                            <li><a href="#number-of-occurence-by-show">Number of occurence</a></li>
+                            <li><a href="#tweets-by-language">Tweet by language</a></li>
+                            <li><a href="#user-background-color">User background color</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="https://github.com/younessadmi/mongoProject" class="btn btn-link">
+                                    <i class="fa fa-github" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-link fill-the-database" data-toggle="tooltip" data-placement="bottom" title="Update DB">
+                                    <i class="fa fa-database" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
@@ -60,8 +68,8 @@ include('pre-requisite.php');
                     <br><br><br>
                 </div>
             </div>
+            <!-- Graph -->
             <div class="row">
-                <!-- Graph -->
                 <div class="col-sm-12 col-md-12">
                     <div class="graph">
                         <select class="tweet-per-hour-by-show">
@@ -69,54 +77,56 @@ include('pre-requisite.php');
                             <?php foreach(getListOfShows() as $hashtag){?>
                                 <option><?php echo $hashtag;?></option>
                                 <?php }?>
-                            </select>
-                            <div id="tweet-per-hour-by-show">
-                                <p class="graph-title">Tweets per hour</p>
-                            </div>
+                        </select>
+                        <div id="tweet-per-hour-by-show">
+                            <p class="graph-title">Tweets per hour</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- Graph -->
-                    <div class="col-sm-12 col-md-12">
-                        <div class="graph">
-                            <div id="number-of-occurence-by-show">
-                                <p class="graph-title">Number of occurence by show</p>
-                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
-                            </div>
+            </div>
+            <!-- Graph -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="graph">
+                        <div id="number-of-occurence-by-show">
+                            <p class="graph-title">Number of occurence by show</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                         </div>
                     </div>
                 </div>
-                <!-- Graph -->
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="graph">
-                            <div id="tweets-by-language">
-                                <p class="graph-title">Tweets by language</p>
-                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
-                            </div>
+            </div>
+            <!-- Graph -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="graph">
+                        <div id="tweets-by-language">
+                            <p class="graph-title">Tweets by language</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                         </div>
                     </div>
                 </div>
-                <!-- Graph -->
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <div class="graph">
-                            <div id="user-background-color">
-                                <p class="graph-title">User background colors</p>
-                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
-                            </div>
+            </div>
+            <!-- Graph -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="graph">
+                        <div id="user-background-color">
+                            <p class="graph-title">User background colors</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                         </div>
                     </div>
                 </div>
-                <script src="js/jquery/jquery-3.2.0.min.js"></script>
-                <script src="js/bootstrap/bootstrap.min.js"></script>
-                <script src="js/nprogress/nprogress.js"></script>
-                <script src="https://code.highcharts.com/stock/highstock.js"></script>
-                <script src="https://code.highcharts.com/modules/exporting.js"></script>
-                <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
-                <script src="https://code.highcharts.com/modules/treemap.js"></script>
+            </div>
+        </div>
+               
+        <script src="js/jquery/jquery-3.2.0.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/nprogress/nprogress.js"></script>
+        <script src="https://code.highcharts.com/stock/highstock.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+        <script src="https://code.highcharts.com/modules/treemap.js"></script>
 
-                <script src="js/script.js"></script>
-            </body>
-            </html>
+        <script src="js/script.js"></script>
+    </body>
+</html>
