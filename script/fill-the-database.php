@@ -24,6 +24,7 @@ foreach($showsJson as $show){
 
 // GET TWEETS FROM TWEETER
 $insRec = new MongoDB\Driver\BulkWrite(['ordered' => false]);
+$maxId = null;
 for($i=8; $i>=0; $i--){
     $date = new DateTime($i.' days ago');
     $tweetOptions = [
@@ -31,10 +32,14 @@ for($i=8; $i>=0; $i--){
         'count' => 100,
         'until' => $date->format('Y-m-d')
     ];
+    if($maxId != null){
+        $tweetOptions['max_id'] = $maxId;
+    }
     $tweets = $connection->get('search/tweets', $tweetOptions);
     foreach($tweets->statuses as $tweet){
         $tweet->_id = $tweet->id_str;
         $insRec->insert($tweet);
+        $maxId = $tweet->id_str;
     }
 }
 
