@@ -15,36 +15,31 @@ $rows = $mongo->executeQuery(DB_NAME.'.tweets', $query);
 $data = [];
 foreach($rows as $row){
     $date = DateTime::createFromFormat('D M d H:i:s O Y', $row->created_at); // Thu Apr 06 19:11:39 +0000 2017
-    if(!isset($data[$date->getTimestamp()*1000])){
-        $data[strval($date->getTimestamp()*1000)] = 1;
-    }else{
-        $data[strval($date->getTimestamp()*1000)]++;
+    if(!isset($data[$date->format('H')])){
+        $data[intval($date->format('H'))] = 0;
+    }
+    $data[intval($date->format('H'))]++;
+}
+foreach(range(0, 23) as $hour){
+    if(!isset($data[$hour])){
+        $data[$hour] = 0;
     }
 }
 ksort($data);
-$dataSeries = [];
-foreach($data as $timestamp => $nbTweet){
-    $dataSeries[] = [
-        floatval($timestamp),
-        $nbTweet
-    ];
-}
-
 
 //DEFINE THE CHART OPTIONS
 $options = [
     'title' => [
-        'text' => 'Tweet per hour'
+        'text' => 'Tweet per hour',
     ],
+    'xAxis' => [
+        'categories' => array_keys($data),
+     ],
     'series' => [
         [
             'type' => 'area',
             'name' => htmlentities($_POST['hashtag']),
-            'data' => $dataSeries,
-            'dataGrouping' => [
-                'smoothed' => true,
-                'enabled' => false
-            ]
+            'data' => array_values($data),
         ]
     ]
 ];

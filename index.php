@@ -54,6 +54,7 @@
                        </select>
                         <div id="tweet-per-hour-by-show">
                             <p class="graph-title">Tweets per hour</p>
+                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
                         </div>
                      </div>
                  </div>
