@@ -35,9 +35,16 @@ $options = [
     'xAxis' => [
         'categories' => array_keys($data),
      ],
+    'plotOptions' => [
+        'areaspline' => [
+            'marker' => [
+                'enabled' => false
+            ]
+        ]
+    ],
     'series' => [
         [
-            'type' => 'area',
+            'type' => 'areaspline',
             'name' => htmlentities($_POST['hashtag']),
             'data' => array_values($data),
         ]
