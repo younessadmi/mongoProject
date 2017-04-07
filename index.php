@@ -3,10 +3,10 @@ include('pre-requisite.php');
 ?>
 
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <?php include('head.php'); ?>
-        </head>
+<html lang="en">
+    <head>
+        <?php include('head.php'); ?>
+    </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="75">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
@@ -43,7 +43,7 @@ include('pre-requisite.php');
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
