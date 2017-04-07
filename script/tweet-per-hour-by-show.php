@@ -7,7 +7,7 @@ if($_POST['hashtag'] != 'All'){
         'entities.hashtags.text' => $_POST['hashtag']
     ];
 }else{
-    $filter = [];   
+    $filter = [];
 }
 $mongo = new MongoDB\Driver\Manager(DB_CONNECTION);
 $query = new MongoDB\Driver\Query($filter);
@@ -30,7 +30,7 @@ ksort($data, SORT_NUMERIC);
 //DEFINE THE CHART OPTIONS
 $options = [
     'title' => [
-        'text' => 'Tweet per hour',
+        'text' => 'Tweets per hour',
     ],
     'xAxis' => [
         'categories' => array_keys($data),

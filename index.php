@@ -22,10 +22,10 @@ include('pre-requisite.php');
                 <div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                        <ul class="nav navbar-nav">
-                            <li><a href="#tweet-per-hour-by-show">Tweet per hour</a></li>
-                            <li><a href="#number-of-occurence-by-show">Number of occurence</a></li>
-                            <li><a href="#tweets-by-language">Tweet by language</a></li>
-                            <li><a href="#user-background-color">User background color</a></li>
+                            <li><a href="#tweet-per-hour-by-show">Tweets per hour</a></li>
+                            <li><a href="#number-of-occurence-by-show">Number of occurences</a></li>
+                            <li><a href="#tweets-by-language">Tweets by language</a></li>
+                            <li><a href="#user-background-color">User background colors</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -118,7 +118,7 @@ include('pre-requisite.php');
                 </div>
             </div>
         </div>
-               
+
         <script src="js/jquery/jquery-3.2.0.min.js"></script>
         <script src="js/bootstrap/bootstrap.min.js"></script>
         <script src="js/nprogress/nprogress.js"></script>
