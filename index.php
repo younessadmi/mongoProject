@@ -48,7 +48,7 @@ include('pre-requisite.php');
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                Dans le cadre d'une initation au Big Data, nous avons dû analyser des tweets. Pour ce faire, nous avons d'abord codé en php l'appel à l'API de Twitter afin de récupérer ces tweets, puis nous stockons ces derniers dans une base mongodb. Enfin, nous lisons dans cette base afin de tracer les graphes suivants.
                             </div>
                         </div>
                     </div>
@@ -62,49 +62,61 @@ include('pre-requisite.php');
             </div>
             <div class="row">
                 <!-- Graph -->
-                 <div class="col-sm-12 col-md-12">
-                    <div class="graph">
-                       <select class="tweet-per-hour-by-show">
-                          <option selected>All</option>
-                           <?php foreach(getListOfShows() as $hashtag){?>
-                               <option><?php echo $hashtag;?></option>
-                           <?php }?>
-                       </select>
-                        <div id="tweet-per-hour-by-show">
-                            <p class="graph-title">Tweets per hour</p>
-                        </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="row">
-                <!-- Graph -->
                 <div class="col-sm-12 col-md-12">
                     <div class="graph">
-                        <div id="number-of-occurence-by-show">
-                            <p class="graph-title">Number of occurence by show</p>
-                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                        <select class="tweet-per-hour-by-show">
+                            <option selected>All</option>
+                            <?php foreach(getListOfShows() as $hashtag){?>
+                                <option><?php echo $hashtag;?></option>
+                                <?php }?>
+                            </select>
+                            <div id="tweet-per-hour-by-show">
+                                <p class="graph-title">Tweets per hour</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Graph -->
-            <div class="row">
-                <div class="col-sm-12 col-md-12">
-                    <div class="graph">
-                        <div id="tweets-by-language">
-                            <p class="graph-title">Tweets by language</p>
-                            <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                <div class="row">
+                    <!-- Graph -->
+                    <div class="col-sm-12 col-md-12">
+                        <div class="graph">
+                            <div id="number-of-occurence-by-show">
+                                <p class="graph-title">Number of occurence by show</p>
+                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                            </div>
                         </div>
-                     </div>
-                 </div>
-             </div>
-            <script src="js/jquery/jquery-3.2.0.min.js"></script>
-            <script src="js/bootstrap/bootstrap.min.js"></script>
-            <script src="js/nprogress/nprogress.js"></script>
-            <script src="https://code.highcharts.com/stock/highstock.js"></script>
-            <script src="https://code.highcharts.com/modules/exporting.js"></script>
-            <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+                    </div>
+                </div>
+                <!-- Graph -->
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="graph">
+                            <div id="tweets-by-language">
+                                <p class="graph-title">Tweets by language</p>
+                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Graph -->
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="graph">
+                            <div id="user-background-color">
+                                <p class="graph-title">User background colors</p>
+                                <i class="fa fa-circle-o-notch fa-spin fa-fw"></i><span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/jquery/jquery-3.2.0.min.js"></script>
+                <script src="js/bootstrap/bootstrap.min.js"></script>
+                <script src="js/nprogress/nprogress.js"></script>
+                <script src="https://code.highcharts.com/stock/highstock.js"></script>
+                <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
+                <script src="https://code.highcharts.com/modules/treemap.js"></script>
 
-            <script src="js/script.js"></script>
-        </body>
-        </html>
+                <script src="js/script.js"></script>
+            </body>
+            </html>

@@ -11,10 +11,11 @@ $(function(){
             dataType: 'JSON'
         }).done(function(nbTweets, textStatus, jqXHR){
             $('#number-of-tweets').html(nbTweets);
-                
+
             buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
             buildChart('tweets-by-language', 'tweets-by-language');
             buildChart('tweet-per-hour-by-show', 'tweet-per-hour-by-show', hashtag, true);
+            buildChart('user-background-color', 'user-background-color');
         }).fail(function(jqXHR, textStatus, errorThrown){
             console.error(jqXHR);
         }).always(function(){
@@ -27,6 +28,7 @@ $(function(){
         buildChart('number-of-occurence-by-show', 'number-of-occurence-by-show');
         buildChart('tweets-by-language', 'tweets-by-language');
         buildChart('tweet-per-hour-by-show', 'tweet-per-hour-by-show', $('select.tweet-per-hour-by-show').val(), true);
+        buildChart('user-background-color', 'user-background-color');
     });
     //Enable tooltips
     $('[data-toggle="tooltip"]').tooltip({
@@ -42,11 +44,12 @@ $(function(){
 function buildChart(container, graph_type, hashtag, highstock){
     var hashtag = (hashtag == undefined)? null:hashtag;
     var highstock = (highstock == undefined)? false:true;
-    
+
     var graph_types = {
         'number-of-occurence-by-show': 'script/number-of-occurence-by-show.php',
         'tweets-by-language': 'script/tweets-by-language.php',
-        'tweet-per-hour-by-show': 'script/tweet-per-hour-by-show.php'
+        'tweet-per-hour-by-show': 'script/tweet-per-hour-by-show.php',
+        'user-background-color': 'script/user-background-color.php'
     };
 
     $.ajax({
