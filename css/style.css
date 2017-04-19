@@ -10,6 +10,10 @@
 }
 
 body {
-    position: relative; 
+    position: relative;
     margin-top:75px;
+}
+
+#number-of-tweets{
+    background-color: #C0DEED;
 }
